@@ -8,14 +8,6 @@ from prompts import system_prompt
 from call_function import available_functions, call_function
 
 
-def generate_content(client, messages):
-    response = client.chat.completions.create(
-        model="openrouter/free",
-        messages=messages,
-    )
-    return response
-
-
 def main():
     parser = argparse.ArgumentParser(description="AI Agent Chatbot")
     parser.add_argument("user_prompt", type=str, help="The prompt to send to the LLM")
